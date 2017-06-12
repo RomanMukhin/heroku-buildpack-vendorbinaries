@@ -29,6 +29,9 @@ while read url; do
       archived=false
     fi
 
+    mkdir -p .heroku/vendor
+    cd .heroku/vendor
+
     if ["$archived" == true] ; then
       curl -L --silent $url | tar x $flag
     else
